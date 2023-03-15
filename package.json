@@ -1,0 +1,15 @@
+{
+  "name": "community-backend",
+  "version": "1.0.0",
+  "description": "Backend for Community Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Akash Das\"",
+  "license": "ISC",
+  "dependencies": {
+    "@theinternetfolks/snowflake": "^1.3.0",
+    "mongoose": "^7.0.1"
+  }
+}
