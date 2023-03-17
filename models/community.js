@@ -5,8 +5,7 @@ const slug = require("mongoose-slug-generator");
 mongoose.plugin(slug);
 const communitySchema = mongoose.Schema(
   {
-    _id: false,
-    id: {
+    _id: {
       type: String,
       default: () => Snowflake.generate(),
     },

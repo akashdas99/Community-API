@@ -4,8 +4,7 @@ const { mongoose } = require("mongoose");
 
 const roleSchema = mongoose.Schema(
   {
-    _id: false,
-    id: {
+    _id: {
       type: String,
       default: () => Snowflake.generate(),
     },
