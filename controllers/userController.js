@@ -81,10 +81,8 @@ exports.signup = async (req, res) => {
       res.status(400);
       throw new Error("Unable to save in DB");
     }
-  } catch (err) {
-    return res.status(400).json({
-      error: err,
-    });
+  } catch (error) {
+    return res.status(500).send(error.message);
   }
 };
 
@@ -135,10 +133,8 @@ exports.signin = async (req, res) => {
         ],
       });
     }
-  } catch (err) {
-    return res.status(400).json({
-      error: err,
-    });
+  } catch (error) {
+    return res.status(500).send(error.message);
   }
 };
 exports.isSignedIn = expressjwt({
@@ -159,7 +155,6 @@ exports.me = async (req, res) => {
           },
         ],
       });
-    console.log(req.auth);
     const user = await User.findOne({ _id: req.auth._id });
     return res.status(200).json({
       status: true,
@@ -172,9 +167,7 @@ exports.me = async (req, res) => {
         },
       },
     });
-  } catch (err) {
-    return res.status(400).json({
-      error: err,
-    });
+  } catch (error) {
+    return res.status(500).send(error.message);
   }
 };
