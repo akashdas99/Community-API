@@ -2,11 +2,6 @@ const { Snowflake } = require("@theinternetfolks/snowflake");
 slugGenerator;
 const { mongoose } = require("mongoose");
 
-const scopes = {
-  "Community Admin": ["member-get", "member-add", "member-remove"],
-  "Community Member": ["member-get"],
-  "Community Moderator": ["member-get", "member-remove"],
-};
 const roleSchema = mongoose.Schema(
   {
     _id: false,

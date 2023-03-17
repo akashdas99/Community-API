@@ -3,8 +3,8 @@ const { mongoose } = require("mongoose");
 
 const userSchema = mongoose.Schema(
   {
-    _id: false,
-    id: {
+    // _id: false,
+    _id: {
       type: String,
       default: () => Snowflake.generate(),
     },
