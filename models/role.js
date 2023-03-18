@@ -1,6 +1,6 @@
 const { Snowflake } = require("@theinternetfolks/snowflake");
-slugGenerator;
 const { mongoose } = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const roleSchema = mongoose.Schema(
   {
@@ -19,6 +19,8 @@ const roleSchema = mongoose.Schema(
       type: [String],
     },
   },
+  { toObject: { versionKey: false } },
   { timestamps: true }
 );
+roleSchema.plugin(mongoosePaginate);
 module.exports = mongoose.model("Role", roleSchema);
